@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #D46A6A;
+    --secondary-color: #FFAAAA;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    padding: 0.5rem;
+}
+
+input:focus {
+    border: none;
+    color: var(--dark-color);
+}
+
+
+/* Utility Classes
+------------------------------------- */
+.card {
+    width: 200px;
+    margin: 1rem;
+}
+
+.card:hover {
+    width: 205px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Header
+------------------------------------- */
+header {
+    width: 100%;
+}
+
+
+/* Navigation
+------------------------------------- */
+#navbar {
+    color: var(--light-color);
+    width: 100%;
+    padding: 1.1rem;
+    background-color:  var(--primary-color);
+}
+
+#navbar a {
+    color: var(--light-color);
+}
+
+
+/* Hero
+------------------------------------- */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    background-color:  var(--light-color);
+}
+
+#hero form {
+    padding: 0.6rem;
+    margin-top: 2rem;
+}
+
+#hero form input,
+#hero form button{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.btn {
+    border: none;
+    width: 3.4rem;
+    height: 1.8rem;
+    font-size: 0.8rem;
+    color: var(--light-color);
+    background-color: var(--secondary-color);
+}
+
+
+/* Render
+------------------------------------- */
+
+#render {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* showMovie
+------------------------------------- */
+#showMovie {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#showMovie > div {
+    padding: 0 2rem;
+}
