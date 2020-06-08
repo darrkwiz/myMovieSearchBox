@@ -48,6 +48,12 @@ input:focus {
     height: 100%;
 }
 
+#backBtn {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+}
+
 
 /* Header
 ------------------------------------- */
@@ -124,4 +130,19 @@ header {
 
 #showMovie > div {
     padding: 0 2rem;
+}
+
+@media(max-width: 500px) {
+    #showMovie {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #showMovie > img {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 2rem;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    }
 }

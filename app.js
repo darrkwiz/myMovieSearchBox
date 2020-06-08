@@ -2,8 +2,6 @@ const movieDB = new MovieDB;
 let masterQuery;
 
 
-
-//get search string data
 const uiSearchData = document.getElementById('findMovie'),
       uiSearchButton = document.getElementById('searchBtn')
       uiRender = document.getElementById('render')
@@ -12,6 +10,7 @@ const uiSearchData = document.getElementById('findMovie'),
 
 
 uiBackButton.style.display = "none";
+
 
 function searchMovie(e) {
     masterQuery = localStorage.getItem("master");
@@ -23,7 +22,8 @@ function searchMovie(e) {
             masterQuery = uiSearchData.value;
             localStorage.setItem('master',masterQuery);
         }
-        uiBackButton.style.display = "none";
+        // set to none if coming back from a different search
+        uiBackButton.style.display = "none"; 
         uiRender.style.display = "flex";
         uiShowMovie.innerHTML = '';
         uiRender.innerHTML = "<img src='spinner.gif' />";
@@ -37,7 +37,7 @@ function searchMovie(e) {
                 output += `
                     <div class="card">
                         <img src="https://image.tmdb.org/t/p/w500${m.poster_path}" id='${m.id}'>
-                        <h3>${m.original_title}</h3>
+                        <h4>${m.original_title}</h4>
                         <!--  <p>${m.overview}</p> -->
                         <br>
                     </div>
@@ -54,6 +54,7 @@ function displayMovie(e) {
     if(e.target.value !== null ) {
         uiRender.style.display = "none";
         uiBackButton.style.display = "block";
+        uiBackButton.style.justifyContent = "end";
         movieDB.getMovie(e.target.id)
         .then(res => res.json())
         .then(m => {
